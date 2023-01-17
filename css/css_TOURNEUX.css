@@ -1,0 +1,1063 @@
+/* Couleur du fond par defaut de la page */
+body {
+    background-color: #110C32;
+}
+
+
+/***** Style Navbar *****/
+/* Couleur de fond de la navbar */
+.navbar {
+    background: #050028 !important;
+}
+/* Text "Portfolio" */
+.navbar-brand h2:after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 3px;
+    position: absolute;
+    background: rgb(248, 248, 255);
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+}
+.navbar-brand h2:hover:after {
+    width: 8%;
+    left: 0;
+}
+/* Text bouton de navigation */
+a span {
+    color: rgb(216, 214, 214);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    font-size: large;
+}
+/* Effet quand on passe la souris dessus */
+a span:hover {
+    color: rgb(232, 148, 21);
+}
+
+
+/***** Style Card Flip index.html *****/
+/* Proprietes des card flip */
+.flip-card {
+    background-color: transparent;
+    width: 500px;
+    height: 600px;
+    perspective: 1000px;
+}
+.flip-card-inner {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: 0.5s ease;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 20px 20px 16px 16px;
+}
+.flip-card-front {
+    background-color: #2A2649;
+}
+/* Rotation de la card */
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+/* Proprietes des images des card */
+.flip-card-front img {
+    width: 100%;
+    height: 51.5%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 20px 20px 16px 16px;
+}
+/*  */
+.flip-card-back {
+    background-color: #FFFFFF;
+    color: rgb(227, 60, 60);
+    transform: rotateY(180deg);
+}
+/* Proprietes text sous image des card */
+.title-front-card {
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: absolute;
+    font-weight: bold;
+    font-size: xx-large;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-shadow:
+        0 0 1px antiquewhite,
+        0 0 1px antiquewhite,
+        0 0 42px #FF9950,
+        0 0 60px #FF9950,
+        0 0 100px #FF9950;
+    animation: lumiere 1s infinite linear;
+}
+/* Placement des card */
+section {
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 5%;
+    align-items: center;
+}
+/* Titre back des card */
+.flip-card-back h1 {
+    color: #21618C;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+/* Text back des card */
+.flip-card-back p {
+    color: #050028;
+}
+/* Proprietes scrollbar */
+::-webkit-scrollbar {
+    width: 15px;
+}
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background: #534a8d;
+    border-radius: 10px;
+}
+/* Text back card competence */
+.flip-card-back-competence p {
+    height: 75%;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.flip-card-back-competence p:hover {
+    overflow-y: scroll;
+}
+.flip-card-front, .flip-card-back-competence {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 20px 20px 16px 16px;
+}
+.flip-card-back-competence {
+    background-color: #FFFFFF;
+    color: #050028;
+    transform: rotateY(180deg);
+}
+/* Titre back card competence */
+.flip-card-back-competence h1 {
+    color: #21618C;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+
+/***** Style texte "Bonjour je m'appelle Timéo" index.html *****/
+/* Proprietes du texte */
+.heading {
+    position: relative;
+    width: fit-content;
+    margin: 0 auto;
+    padding-top: 30px;
+}
+/* Text avant le passage de la barre */
+.heading h2 {
+    position: relative;
+    font-size: clamp(0.75rem, 7.5vw, 3.75rem);
+    line-height: 2em;
+    letter-spacing: -0.01em;
+    color: antiquewhite;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 50px;
+}
+/* Text après le passage de la barre */
+.heading h2::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20%;
+    height: 100%;
+    color: rgb(232, 148, 21);
+    -webkit-text-stroke: 1px rgb(232, 148, 21);
+    border-right: 2px solid rgb(232, 148, 21);
+    overflow: hidden;
+    animation: move 5s alternate ease-in-out infinite;
+}
+/* Movement de la barre */
+@keyframes move {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 30%;
+    }
+}
+
+
+/***** Style texte "Bonjour je m'appelle Timéo" index.html *****/
+/* Proprietes du texte */
+.heading-anglais {
+    position: relative;
+    width: fit-content;
+    margin: 0 auto;
+    padding-top: 30px;
+}
+/* Text avant le passage de la barre */
+.heading-anglais h2 {
+    position: relative;
+    font-size: clamp(0.75rem, 7.5vw, 3.75rem);
+    line-height: 2em;
+    letter-spacing: -0.01em;
+    color: antiquewhite;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 50px;
+}
+/* Text après le passage de la barre */
+.heading-anglais h2::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20%;
+    height: 100%;
+    color: rgb(232, 148, 21);
+    -webkit-text-stroke: 1px rgb(232, 148, 21);
+    border-right: 2px solid rgb(232, 148, 21);
+    overflow: hidden;
+    animation: move1 5s alternate ease-in-out infinite;
+}
+/* Movement de la barre */
+@keyframes move1 {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 23%;
+    }
+}
+
+
+
+/***** Style texte et image avant la FAQ index.html *****/
+/* Création de la bande */
+.bande {
+    padding: 3%;
+    background: #050028;
+}
+.col-md-12 {
+    position: relative;
+}
+/* Proprietes de l'image à gauche */
+.col-md-12 img {
+    float: left;
+}
+/* Proprietes texte à droite de l'image */
+.col-md-12 h2 {
+    color: rgb(248, 248, 255);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 300%;
+}
+.col-md-12 p {
+    color: #D2D0E6;
+    padding-top: 4%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 120%;
+}
+
+
+/***** Style texte FAQ index.html *****/
+/* Proprietes du texte */
+.heading-faq h2 {
+    color: rgb(232, 148, 21);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    transition: transform .2s;
+}
+/* Effet quand on passe la souris dessus */
+.heading-faq h2:after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 3px;
+    left: 50%;
+    position: absolute;
+    background: rgb(204, 124, 50);
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+}
+.heading-faq h2:hover:after {
+    width: 100%;
+    left: 0;
+}
+
+
+/***** Style accordion FAQ index.html *****/
+/* Proprietes accordion */
+.accordion {
+    display: block;
+    align-items: center;
+    width: 70%;
+    height: 50%;
+    justify-content: center;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 50%);
+}
+.accordion-button:focus {
+    box-shadow: none;
+    background-color: #3b375a !important;
+}
+.accordion-item {
+    padding: 20px;
+    background-color: transparent;
+}
+.accordion-button {
+    border-radius: 20px;
+}
+/* Titre des boutons */
+.accordion-item h2 button {
+    color: rgb(248, 248, 255);
+    background-color: #2A2649;
+}
+/* Text deroule */
+.accordion-body {
+    color: rgb(248, 248, 255);
+    background-color: #2A2649;
+}
+.accordion-button::after {
+    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>") !important;
+}
+
+
+/***** Style mailbox liensutiles.html *****/
+/* Proprietes de la mailbox */
+.mail {
+    padding: 90px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.mail:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    background-size: cover;
+    filter: blur(50px);
+    z-index: -1;
+}
+.contact-box {
+    max-width: 850px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #2A2649;
+    box-shadow: 0px 0px 19px 5px rgba(0, 0, 0, 0.19);
+    border-radius: 20px;
+}
+/* Image partie gauche */
+.left {
+    background: url("../img/enveloppe.gif") no-repeat center;
+    background-size: cover;
+    height: 100%;
+    border-radius: 20px 0px 0px 20px;
+    border: none;
+}
+.right {
+    padding: 25px 40px;
+}
+/* Texte "Me contacter" envoie  */
+.mail h2 {
+    position: relative;
+    padding: 0 0 10px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+.mail h2:after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    height: 4px;
+    width: 50px;
+    border-radius: 2px;
+    background-color: #FF9950;
+}
+/* Proprietes des cases à completer */
+.field {
+    width: 100%;
+    border: 2px solid rgba(0, 0, 0, 0);
+    outline: none;
+    background-color: rgba(247, 247, 248, 0.822);
+    padding: 0.5rem 1rem;
+    font-size: 1.1rem;
+    margin-bottom: 22px;
+    transition: .3s;
+    border-radius: 5px;
+}
+.field:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+textarea {
+    min-height: 150px;
+}
+/* Boutou d'envoie */
+.butn {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    background-color: #FF9950;
+    color: #fff;
+    font-size: 1.1rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: .3s;
+    border-radius: 5px;
+}
+.butn:hover {
+    background-color: #ac5d03;
+    animation: shakebutn 0.4s cubic-bezier(.36, .07, .19, .97) both;
+    transform: translate3d(0, 0, 0);
+    perspective: 1000px;
+}
+/* Effet quand on passe la souris dessus */
+@keyframes shakebutn {
+    10%, 40% {
+        transform: translate3d(-1px, 0, 0);
+    }
+    20%, 80% {
+        transform: translate3d(2px, 0, 0);
+    }
+    50%, 50%, 30% {
+        transform: translate3d(-2px, 0, 0);
+    }
+    10%, 20% {
+        transform: translate3d(2px, 0, 0);
+    }
+}
+.field:focus {
+    border: 2px solid rgba(30, 85, 250, 0.47);
+    background-color: #fff;
+}
+
+
+/***** Style responsive *****/
+/* Modification de certains éléments pour le responsive */
+@media screen and (max-width: 768px) {
+    .contact-box {
+        grid-template-columns: 1fr;
+    }
+    .left {
+        height: 0px;
+    }
+    .right {
+        padding: 80px 80px 80px 80px;
+    }
+    .video_exp {
+        width: 80%;
+    }
+    .bande img {
+        padding-left: 18%;
+    }
+    .heading-faq h2 {
+        padding: 20%;
+    }
+
+}
+/* Responsive texte "Bonjour je m'appelle Timéo" index.html */
+@media screen and (max-width: 1003px) {
+    .heading h2::before {
+        display: none;
+    }
+    .heading {
+        text-align: center;
+    }
+    .heading-anglais h2::before {
+        display: none;
+    }
+    .heading-anglais {
+        text-align: center;
+    }
+}
+@media screen and (max-width: 1500px) {
+    .flip-card {
+        padding-bottom: 5%;
+    }
+}
+
+
+/***** Style experience pro interets.html *****/
+/* Encadrement de la vidéo et du texte */
+.cadre {
+    background-color: #1c1741;
+    border: 5px;
+    border-radius: 20px;
+    margin: 3%;
+    padding: 2%;
+}
+/* Placement de la vidéo et du texte */
+.banniere .video-left {
+    width: 50%;
+    height: 25%;
+    display: inline-block;
+}
+.banniere video {
+    border-radius: 20px;
+    width: 40%;
+    height: 20%;
+}
+.banniere .video-right h2 {
+    color: rgb(248, 248, 255);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+.banniere .video-right p {
+    color: #D2D0E6;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+
+/***** Style competences competences.html *****/
+/* Texte */
+.comp h2 {
+    color: white;
+    text-align: center;
+}
+
+
+/***** Style boutton index.html *****/
+/* Bouton download CV */
+.d-flex button {
+    background-color: rgb(232, 148, 21);
+    border-radius: 10px;
+}
+.d-flex button:hover {
+    background-color: #ac5d03;
+    animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
+    transform: translate3d(0, 0, 0);
+    perspective: 1000px;
+}
+/* Bouton back to top */
+.bas {
+    padding-top: 2%;
+}
+.d-flex a {
+    background-color: rgb(232, 148, 21);
+    color: rgb(248, 248, 255);
+    border-radius: 10px;
+
+}
+.d-flex a:hover {
+    background-color: #ac5d03;
+    animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
+    transform: translate3d(0, 0, 0);
+    perspective: 1000px;
+}
+/* Effet quand on passe la souris dessus */
+@keyframes shake {
+    10%, 90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+    20%, 80% {
+        transform: translate3d(2px, 0, 0);
+    }
+    30%, 50%, 70% {
+        transform: translate3d(-2px, 0, 0);
+    }
+    40%, 60% {
+        transform: translate3d(2px, 0, 0);
+    }
+}
+
+
+/***** Style projet professionnel projetprofessionnel.html *****/
+/* Carousel */
+
+.carousel-inner {
+    border-radius: 15px;
+}
+/* Titre et texte projet professionnel */
+.text-projet {
+    text-align: center;
+    color: #D2D0E6;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+.titre-projet-pro {
+    color: rgb(248, 248, 255);
+    text-align: center;
+    padding-bottom: 1%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-shadow: 0 0 25px #B3D2F7;
+}
+
+
+/***** Style Footer *****/
+/* Zone icones footer */
+.container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 00%;
+    justify-content: center;
+    min-height: 1vh;
+}
+/* Couleur bas du footer */
+.text-center {
+    background-color: #050028;
+}
+/* Text bas du footer */
+.text-center span {
+    color: rgb(255, 255, 255);
+}
+/* Text haut du footer */
+.text-contact-reseaux p {
+    font-size: 150%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.langue button {
+    color: rgb(255, 255, 255);
+    background-color: rgb(232, 148, 21);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 8px;
+    
+}
+
+.langue {
+    float: right;
+    padding-right: 0.1%;
+    padding-top: 90px;
+}
+
+.langue button:hover {
+    background-color: #ac5d03;
+    animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
+    transform: translate3d(0, 0, 0);
+    perspective: 1000px;
+}
+
+/*
+.stack {
+  display: grid;
+  grid: [stack] / [stack];
+  perspective: 5000;
+}
+
+.stack:before {
+    content: "";
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: background 2s ease;
+    pointer-events: none;
+  }
+
+.stack:hover:before, .stack:active:before {
+      background: #110C32;
+    }
+
+.stack:hover .card, .stack:active .card {
+    --bg-opacity: 5%;
+    transition-duration: 2s;
+    transition-timing-function: var(--easeInOutCirc);
+    transform: 
+      rotateX(45deg) rotate(45deg) 
+      translateZ(var(--z-offset)) translateY(20vh) translateX(20vh)
+    
+  }
+
+.stack:hover .card:nth-child(1), .stack:active .card:nth-child(1) { --z-offset: 75vh; }
+
+.stack:hover .card:nth-child(2), .stack:active .card:nth-child(2) { --z-offset: 50vh; }
+
+.stack:hover .card:nth-child(3), .stack:active .card:nth-child(3) { --z-offset: 25vh; }
+
+.stack:hover .card:nth-child(4), .stack:active .card:nth-child(4) { --z-offset: 0vh; }
+
+.stack:hover .card:nth-child(5), .stack:active .card:nth-child(5) { --z-offset: -25vh; }
+
+.stack:hover .card:nth-child(1)::after, .stack:active .card:nth-child(1)::after { transition-delay: 1.5s; }
+
+.stack:hover .card:nth-child(2)::after, .stack:active .card:nth-child(2)::after { transition-delay: 1.7s; }
+
+.stack:hover .card:nth-child(3)::after, .stack:active .card:nth-child(3)::after { transition-delay: 1.9s; }
+
+.stack:hover .card:nth-child(4)::after, .stack:active .card:nth-child(4)::after { transition-delay: 2.1s; }
+
+.stack:hover .card:nth-child(5)::after, .stack:active .card:nth-child(5)::after { transition-delay: 2.3s; }
+
+.stack:hover .card::after, .stack:active .card::after {
+      opacity: 1;
+      transform: rotate(-45deg) rotateY(45deg) translateX(0px);
+    }
+
+.stack:hover .card.content, .stack:active .card.content {
+      background: transparent;
+      color: white;
+      border-color: transparent;
+      transition: 
+        border-color 1s var(--easeInOutCirc) 0s,
+        background-color 1s var(--easeInOutCirc) 0s,
+        color 1s var(--easeInOutCirc) 0s,
+        transform 2s var(--easeInOutCirc) 0s;
+    }
+
+.stack:hover .card.padding, .stack:active .card.padding {
+      transition-delay: .1s;
+    }
+
+.stack:hover .card.border, .stack:active .card.border {
+      transition-delay: .2s;
+    }
+
+.stack:hover .card.background, .stack:active .card.background {
+      background: white;
+      transition: 
+        background-color 2s var(--easeInOutCirc) .3s, 
+        transform 2s var(--easeInOutCirc) .2s;
+    }
+
+.stack:hover .card.box-shadow, .stack:active .card.box-shadow {
+      transition-delay: .4s;
+      box-shadow:
+        0 -1px 25px rgba(0, 0, 0, 0.4),
+        0 7.6px 6.1px rgba(0, 0, 0, 0.051),
+        0 14.3px 11.5px rgba(0, 0, 0, 0.059),
+        0 25.5px 20.5px rgba(0, 0, 0, 0.07),
+        0 47.6px 38.4px rgba(0, 0, 0, 0.094),
+        0 114px 92px rgba(0, 0, 0, 0.19)
+      ;
+    }
+
+.card {
+  grid-area: stack;
+  
+  --z-offset: 0;
+  --easeInOutCirc: cubic-bezier(0.85, 0, 0.15, 1);
+  --bg-opacity: 0%;
+  
+  transition: transform 4s ease;
+  
+  width: 40vmin;
+  height: 40vmin;
+  box-sizing: border-box;
+  color: white;
+  box-sizing: border-box;
+  background: rgba(255, 255, 254, 0.05);
+  position: relative
+}
+
+@media (orientation: landscape) {
+
+.card {
+    width: 40vh;
+    height: 40vh
+}
+  }
+
+@media (max-width: 540px) {
+
+.card {
+    width: 60vw;
+    height: 60vw
+}
+  }
+
+.card:nth-child(1) {
+    z-index: 3;
+  }
+
+.card:nth-child(2) {
+    z-index: 2;
+  }
+
+.card::after {
+    content: "Box";
+    position: absolute;
+    left: -45%;
+    top: 110%;
+    font-size: 1.25rem;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.75);
+    white-space: nowrap;
+    padding: 1ch 2ch;
+    border-radius: 4ch;
+    opacity: 0;
+    transition: opacity .5s ease 0s, transform .5s ease;
+    transform: rotate(-45deg) rotateY(45deg) translateX(20px);
+    background: rgba(0, 0, 0, 0.7)
+  }
+
+@media (max-width: 540px) {
+
+.card::after {
+      left: -20%;
+      top: 70%
+  }
+    }
+
+.card.content {
+    z-index: 5;
+    transition: 
+      border-color 4s ease,
+      background-color 5s ease 2s,
+      color 4s ease 0s,
+      transform 4s ease 0s;
+    padding: 5vmin;
+    font-size: max(2.5vmin, .9rem);
+    line-height: 1.5;
+    background: rgb(255, 255, 254);
+    border: 5px solid green;
+    color: black
+  }
+
+.card.content::after { 
+      content: "Content Box"; 
+      left: -50%
+    }
+
+@media (max-width: 540px) {
+
+.card.content::after {
+        left: -23%
+    }
+      }
+
+.card.padding {
+    background: transparent;
+    z-index: 4;
+    transition-delay: .1s
+  }
+
+.card.padding::after { content: "Padding Box"; }
+
+.card.padding::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      -webkit-clip-path: polygon(
+        0% 0%, 0% 100%, 
+        5vmin 100%, 5vmin 5vmin, 
+        calc(100% - 5vmin) 5vmin, 
+        calc(100% - 5vmin) calc(100% - 5vmin), 
+        5vmin calc(100% - 5vmin), 5vmin 100%, 
+        100% 100%, 100% 0%
+      );
+              clip-path: polygon(
+        0% 0%, 0% 100%, 
+        5vmin 100%, 5vmin 5vmin, 
+        calc(100% - 5vmin) 5vmin, 
+        calc(100% - 5vmin) calc(100% - 5vmin), 
+        5vmin calc(100% - 5vmin), 5vmin 100%, 
+        100% 100%, 100% 0%
+      );
+      background: repeating-linear-gradient(
+        -45deg, 
+        cyan, cyan 1px, 
+        rgba(255, 255, 254, 0.05) 1px, rgba(255, 255, 254, 0.05) 10px
+      );
+    }
+
+.card.border {
+    z-index: 3;
+    background: transparent;
+    transition-delay: .2s
+  }
+
+.card.border::after { content: "Border Box"; }
+
+.card.border::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      -webkit-clip-path: polygon(
+        0% 0%, 0% 100%, 
+        5px 100%, 5px 5px, 
+        calc(100% - 5px) 5px, 
+        calc(100% - 5px) calc(100% - 5px), 
+        5px calc(100% - 5px), 5px 100%, 
+        100% 100%, 100% 0%
+      );
+              clip-path: polygon(
+        0% 0%, 0% 100%, 
+        5px 100%, 5px 5px, 
+        calc(100% - 5px) 5px, 
+        calc(100% - 5px) calc(100% - 5px), 
+        5px calc(100% - 5px), 5px 100%, 
+        100% 100%, 100% 0%
+      );
+      background: linear-gradient(hotpink, hotpink);
+    }
+
+.card.background {
+    z-index: 2;
+    transition: 
+      background-color 4s ease .3s,
+      transform 4s ease .3s
+  }
+
+.card.background::after { content: "Background Box"; }
+
+.card.box-shadow {
+    z-index: 1;
+    background: transparent;
+    transition: 
+      box-shadow 4s ease .4s,
+      transform 4s ease .4s; 
+    
+    box-shadow:
+      0 2.8px 2.2px rgba(0, 0, 0, 0.02),
+      0 6.7px 5.3px rgba(0, 0, 0, 0.028),
+      0 12.5px 10px rgba(0, 0, 0, 0.035),
+      0 22.3px 17.9px rgba(0, 0, 0, 0.042),
+      0 41.8px 33.4px rgba(0, 0, 0, 0.05),
+      0 100px 80px rgba(0, 0, 0, 0.07)
+    
+  }
+
+.card.box-shadow::after { content: "Shadow Box"; }
+
+p:first-of-type {
+  margin-top: 0;
+}
+
+@media (hover:hover) {
+  #mobile-prompt {
+    display: none;
+  }
+} 
+
+@media (hover:none) {
+  #desktop-prompt {
+    display: none;
+  }
+}
+*/
+.container1 {
+    width: 99%;
+    padding-left: 1%;
+    color: rgb(255, 255, 255);
+    padding-right: 1.5%;
+    padding-top: 80px;
+    
+}
+.container1 h1{
+    color: rgb(248, 248, 255);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.underline-text {
+    text-decoration-color: rgb(255, 169, 39); 
+    text-decoration-thickness: 2px;
+    padding-top: 2%;
+}
+
+.container1 p {
+    color: #D2D0E6;
+}
+.progress {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto 
+}
+.texte-courbe {
+    color: rgb(248, 248, 255);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    font-size: 180%;
+    padding-bottom: 1%;
+}
+
+.bar-position {
+    padding-top: 5%;
+    padding-bottom: 2%;
+}
+
+.container1 h3 {
+    color: rgb(248, 248, 255);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-shadow: 0 0 2px #ffffff;
+}
+
+.col-md-5 {
+    background-color: #1c1741;
+    border-radius: 15px;
+
+}
+
+.col-md-5 btn {
+    background-color: rgb(232, 148, 21);
+    border-radius: 10px;
+}
+.col-md-5 btn:hover {
+    background-color: #ac5d03;
+    animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
+    transform: translate3d(0, 0, 0);
+    perspective: 1000px;
+}
+/* Bouton back to top */
+.bas {
+    padding-top: 2%;
+}
+.col-md-5 a {
+    background-color: rgb(232, 148, 21);
+    color: rgb(248, 248, 255);
+    border-radius: 10px;
+
+}
+.col-md-5 a:hover {
+    background-color: #ac5d03;
+    animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
+    transform: translate3d(0, 0, 0);
+    perspective: 1000px;
+}
+
+.flip-card-back a {
+    background-color: rgb(232, 148, 21);
+    color: rgb(248, 248, 255);
+    border-radius: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+.flip-card-back a:hover {
+    background-color: #ac5d03;
+    color: rgb(248, 248, 255);
+    animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
+    transform: translate3d(0, 0, 0);
+    perspective: 1000px;
+}
+
+  
+#aaa {
+    padding-bottom: 0;
+}
